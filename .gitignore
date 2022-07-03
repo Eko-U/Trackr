@@ -1,0 +1,6 @@
+original/
+node_modules/
+*.zip
+*.docx
+*.txt
+icomoon/

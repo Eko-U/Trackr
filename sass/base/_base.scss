@@ -1,0 +1,148 @@
+// font-family: 'Nunito', sans-serif;
+// font-family: 'Quicksand', sans-serif;
+//VARIABLE
+:root {
+  --font-primary: 'Nunito', sans-serif;
+  --font-secondary: 'Quicksand', sans-serif;
+  --color-primary: rgba(255, 156, 54, 0.8);
+}
+
+//BREAKPOINT FOR VARIOUS DEVICES
+$bp-large: 75em;
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; //font-size: 10px;
+  box-sizing: border-box;
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 55%; //1200px font-size: 8px;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 50%;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 45%;
+  }
+
+  @media only screen and (max-width: 800px) {
+    font-size: 40%;
+  }
+
+  @media only screen and (max-width: 400px) {
+    font-size: 30%;
+  }
+
+  @media only screen and (max-width: 300px) {
+    font-size: 20%;
+  }
+  @media only screen and (max-width: 200px) {
+    font-size: 10%;
+  }
+}
+
+body {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3{
+  font-family: var(--font-secondary);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 5.5rem;
+
+  @media only screen and (max-width: 1100px) {
+    font-size: 5rem;
+  }
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {font-size: 2.5rem}
+
+li {
+  list-style: none;
+  cursor: pointer;
+}
+
+h2, h3 {
+  color: var(--color-primary);
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @media only screen and (max-width: 400px) {
+    align-items: center;
+  }
+}
+
+
+//SETTING THE LAYOUT OF THE PAGE
+.container{
+  display: grid;
+  grid-template-columns: 10rem repeat(5, 1fr) 10rem;
+  grid-template-rows: repeat(4, max-content);
+
+  @media only screen and (max-width: 1000px) {
+    grid-template-columns: 5rem repeat(5, 1fr) 5rem;
+  }
+
+  @media only screen and (max-width: 400px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+.header {
+  grid-column: 1 / -1;
+}
+
+.control {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-gap: 8rem;
+}
+
+.customer {
+  grid-column: 2 / 7;
+
+  @media only screen and (max-width: 1000px) {
+   grid-column: 1 / -1;
+  }
+}
+
+.download {
+  grid-column: 2 / 7;
+  @media only screen and (max-width: 1000px) {
+    grid-column: 1 / -1;
+  }
+}
+
+.footer {
+  grid-column: 1 / -1;
+}
+
+
+.margin-t-lg {padding-top: 5rem;}
+.margin-b-lg {padding-bottom: 5rem;}
+.hidden {display: none;}
